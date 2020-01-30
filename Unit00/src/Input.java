@@ -17,7 +17,7 @@ public class Input
 
 		int intOne, intTwo;
 		double doubleOne, doubleTwo;
-		float floatOne, floatTwo = 0;
+		float floatOne, floatTwo;
 		short shortOne, shortTwo;
 
 
@@ -36,6 +36,9 @@ public class Input
 		
 		System.out.print("Enter any number up to one decimal");
 		floatOne = keyboard.nextFloat();
+		
+		System.out.print("Enter any number up to one decimal");
+		floatTwo = keyboard.nextFloat();
 		
 		System.out.print("Enter any integer between -2^15 and 2^15");
 		shortOne = keyboard.nextShort();
