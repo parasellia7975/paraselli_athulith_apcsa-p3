@@ -21,22 +21,22 @@ public class DiscountRunner
 		Discount price = new Discount();
 		out.print(price.getDiscountedBill(amt));
 		
-		out.print("Enter the original bill amount :: ");
+		out.print("\nEnter the original bill amount :: ");
 		amt = keyboard.nextDouble();
 
 		out.print(price.getDiscountedBill(amt) + "\n");
 		
-		out.print("Enter the original bill amount :: ");
+		out.print("\nEnter the original bill amount :: ");
 		amt = keyboard.nextDouble();
 
 		out.print(price.getDiscountedBill(amt) + "\n");
 		
-		out.print("Enter the original bill amount :: ");
+		out.print("\nEnter the original bill amount :: ");
 		amt = keyboard.nextDouble();
 
 		out.print(price.getDiscountedBill(amt) + "\n");
 		
-		out.print("Enter the original bill amount :: ");
+		out.print("\nEnter the original bill amount :: ");
 		amt = keyboard.nextDouble();
 
 		out.print(price.getDiscountedBill(amt) + "\n");
