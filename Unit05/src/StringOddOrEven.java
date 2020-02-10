@@ -15,22 +15,12 @@ public class StringOddOrEven
 
 	public StringOddOrEven()
 	{
-		if(word.length()%2 == 0) {
-			out.println("It is Even");
-		}
-		else {
-			out.println("It is Odd");
-		}
+		
 	}
 
 	public StringOddOrEven(String s)
 	{
-		if(s.length()%2 == 0) {
-			out.println("It is Even");
-		}
-		else {
-			out.println("It is Odd");
-		}
+		word = s;
 	}
 
 	public void setString(String s)
