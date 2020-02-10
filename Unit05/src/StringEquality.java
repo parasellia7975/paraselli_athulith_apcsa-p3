@@ -18,14 +18,21 @@ public class StringEquality
 
 	public StringEquality(String one, String two)
 	{
+		wordOne = one;
+		wordTwo = two;
 	}
 
 	public void setWords(String one, String two)
 	{
+		wordOne = one;
+		wordTwo = two;
 	}
 
 	public boolean checkEquality( )
 	{
+		if(wordOne.compareTo(wordTwo) == 0) {
+			return true;
+		}
 		return false;
 	}
 
