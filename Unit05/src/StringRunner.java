@@ -16,7 +16,7 @@ public class StringRunner
 	{
 		boolean truu = true;
 		while(truu) {
-		out.println("Enter a word :: ");
+		out.println("Enter a word (type Q to end program) :: ");
 		String inputWord = "" + keyboard.nextLine();
 		StringOddOrEven theWord = new StringOddOrEven();
 		theWord.setString(inputWord);
