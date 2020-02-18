@@ -4,11 +4,22 @@
 
 import static java.lang.System.*;
 
+import java.util.Scanner;
+
 public class LetterRemoverRunner
 {
 	public static void main( String args[] )
 	{
-		//add test cases		
+		Scanner keyboard = new Scanner(System.in);
+		//add test cases	
+		System.out.println("Enter a sentence  :: ");
+		String sentence = keyboard.nextLine();
+		System.out.println("Enter a character to remove :: ");
+		char remove = keyboard.nextLine().charAt(0);
+		LetterRemover myLetterRemover = new LetterRemover(sentence, remove);
+		System.out.println(myLetterRemover.removeLetters());
+		
+		
 											
 	}
 }
