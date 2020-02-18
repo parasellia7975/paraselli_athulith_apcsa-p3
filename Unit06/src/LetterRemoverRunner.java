@@ -20,6 +20,15 @@ public class LetterRemoverRunner
 		System.out.println(myLetterRemover.removeLetters());
 		
 		
+		System.out.println("Enter a sentence  :: ");
+		sentence = keyboard.nextLine();
+		System.out.println("Enter a character to remove :: ");
+		remove = keyboard.nextLine().charAt(0);
+		myLetterRemover.setRemover(sentence, remove);
+		System.out.println(myLetterRemover.removeLetters());
+		
+		
+		
 											
 	}
 }
