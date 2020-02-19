@@ -31,16 +31,31 @@ public class Magpie2
 	public String getResponse(String statement)
 	{
 		String response = "";
+		if(statement.length()==0) {
+			response = "Say something please";
+		}
 		if (statement.indexOf("no") >= 0)
 		{
-			response = "Why so negative?";
+			response = "Why do you say no?";
 		}
 		else if (statement.indexOf("mother") >= 0
 				|| statement.indexOf("father") >= 0
 				|| statement.indexOf("sister") >= 0
 				|| statement.indexOf("brother") >= 0)
 		{
-			response = "Tell me more about your family.";
+			response = "What is your family like?";
+		}
+		else if(statement.indexOf("dog") >=0 || staement.indexOf("cat")>=0) {
+			response = "Tell me more about your pets";
+		}
+		else if(statement.indexOf("Mauro")>=0) {
+			response = "He sounds like a great teacher";
+		}
+		else if(statement.indexOf("death")>=0) {
+			response = "im so sorry to hear that";
+		}
+		else if(statement.indexOf("happy")>=0) {
+			response = "Im glad to hear that";
 		}
 		else
 		{
@@ -55,7 +70,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -75,6 +90,12 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+		else if (whichResponse == 4) {
+			response = "Thats cool!";
+		}
+		else if (whichResponse = 5) {
+			response = "How did that make you feel?";
 		}
 
 		return response;
