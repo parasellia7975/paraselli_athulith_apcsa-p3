@@ -18,5 +18,7 @@ public class TriangleFiveRunner
 	   TriangleFive test = new TriangleFive(letter,num);
 	   System.out.println(test);
 	   
+	    
+	  
 	}
 }
