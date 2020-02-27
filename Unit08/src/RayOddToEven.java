@@ -13,10 +13,10 @@ public class RayOddToEven
 			if(ray[i]%2 == 1) {
 				foundOdd = true;
 			}
-			if(ray[i]%2 == 1 && foundOdd) {
+			if(ray[i]%2 == 1 && (foundOdd == true)) {
 				distance += 1;
 			}
-			if(ray[i]%2 == 0 && foundOdd) {
+			if(ray[i]%2 == 0 && (foundOdd == true)) {
 				return distance;
 			}
 		}
