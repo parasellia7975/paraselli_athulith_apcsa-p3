@@ -40,6 +40,7 @@ public class Deck {
 		for(int i = 0; i<ranks.length; i++) {
 			cards[i] = new Card(rankings[i], suits[i], pointValues[i]);
 		}
+		shuffle();
 		
 	}
 
@@ -82,7 +83,7 @@ public class Deck {
 		for(int i = 0; i<cards.length - 1; i++) {
 			tempArray[i] = cards[i+1];
 		}
-		cards = tempArray;
+		cards = tempArray.clone();
 		return temp;
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
 	}
