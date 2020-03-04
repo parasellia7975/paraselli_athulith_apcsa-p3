@@ -41,5 +41,12 @@ public class DeckTester {
 		System.out.println(test3.deal().toString());
 		size = test3.size();
 		System.out.println("The Deck Size is " +size);
+		test3.shuffle();
+		System.out.println("Before Shuffling the first card is");
+		System.out.println(test3.getFirst());
+		test3.shuffle();
+		System.out.println("After Shuffling the first card is");
+		System.out.println(test3.getFirst());
+		
 	}
 }

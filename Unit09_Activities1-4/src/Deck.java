@@ -43,7 +43,7 @@ public class Deck {
 		shuffle();
 		
 	}
-
+	
 
 	/**
 	 * Determines if this deck is empty (no undealt cards).
@@ -70,6 +70,16 @@ public class Deck {
 	 */
 	public void shuffle() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		Card copyValues;
+		int shuffleIndex;
+		
+		for (int i = cards.length - 1; i >= 0; i--)
+		{
+			shuffleIndex = (int)(Math.random() * (i + 1));
+			copyValues = cards[shuffleIndex];
+			cards[shuffleIndex] = cards[i];
+			cards[i] = copyValues;
+		}
 	}
 
 	/**
@@ -86,6 +96,10 @@ public class Deck {
 		cards = tempArray.clone();
 		return temp;
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+	}
+	
+	public Card getFirst() {
+		return cards[0];
 	}
 
 	/**
