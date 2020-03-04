@@ -7,12 +7,12 @@ public class Shuffler {
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 1;
+	private static final int SHUFFLE_COUNT = 5;
 
 	/**
 	 * The number of values to shuffle.
 	 */
-	private static final int VALUE_COUNT = 4;
+	private static final int VALUE_COUNT = 52;
 
 	/**
 	 * Tests shuffling methods.
@@ -26,7 +26,7 @@ public class Shuffler {
 			values1[i] = i;
 			}
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			perfectShuffle(values1);
+			values1 = perfectShuffle(values1);
 			System.out.print("  " + j + ":");
 			for (int k = 0; k < values1.length; k++) {
 				System.out.print(" " + values1[k]);
@@ -59,22 +59,22 @@ public class Shuffler {
 	 * the cards in one half with the cards in the other.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void perfectShuffle(Card[] cards) {
+	public static int[] perfectShuffle(int[] cards) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-		Card[] shuffled = new Card[52];
+		int[] shuffled = new int[VALUE_COUNT];
 		int k = 0;
-		for(int i = 0; i<=25; i++) {
+		for(int i = 0; i<=(VALUE_COUNT/2)-1; i++) {
 			
-			shuffled[i] = cards[k];
-			k+=2;
+			shuffled[k] = cards[i];
+			k = k + 2;
 			
 		}
 		k = 1;
-		for(int i = 26; i<=51; i++) {
-			shuffled[i] = cards[k];
+		for(int i = VALUE_COUNT/2; i<=VALUE_COUNT-1; i++) {
+			shuffled[k] = cards[i];
 			k+=2;
 		}
-		cards = shuffled;
+		return shuffled;
 	}
 
 	/**
@@ -88,28 +88,18 @@ public class Shuffler {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(Card[] cards) {
-		Card[] shuffled = new Card[52];
-		Card temp = cards[0];
-		Card[] tempArray = new Card[cards.length-1];
-		int i = 51;
-		for(int k = 51; k>=0; k--) {
-			i = k;
-			i = (int) (i*Math.random());
-			temp = cards[i];
-			
-			for(int p = 0; p<cards.length - 1; p++) {
-				if(i != p) {
-				tempArray[p] = cards[p+1];
-				}
-				else
-					tempArray[p] = cards[51];
-				
-			}
-			shuffled[k] = temp;
-			
+	public static void selectionShuffle(int[] cards) {
+		int copyValues;
+		int shuffleIndex;
+		
+		for (int i = cards.length - 1; i >= 0; i--)
+		{
+			shuffleIndex = (int)(Math.random() * (i + 1));
+			copyValues = cards[shuffleIndex];
+			cards[shuffleIndex] = cards[i];
+			cards[i] = copyValues;
 		}
-		cards = shuffled;
+		
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
 	}
 }
