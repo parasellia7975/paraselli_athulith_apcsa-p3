@@ -14,10 +14,13 @@ public class ToyStore
 
 	public ToyStore()
 	{
+		toyList = new ArrayList<Toy>();
 	}
 
 	public void loadToys( String toys )
 	{
+		Toy test = new Toy(toys);
+		toyList.add(test);
 	}
   
   	public Toy getThatToy( String nm )
