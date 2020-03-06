@@ -8,5 +8,11 @@ public class ToyRunner
 {
 	public static void main(String[] args)
 	{
+		Toy sorri = new Toy("sorry");
+		sorri.setCount(1);
+		System.out.println(sorri);
+		Toy joe = new Toy("gi joe");
+		joe.setCount(5);
+		System.out.println(joe);
 	}
 }
