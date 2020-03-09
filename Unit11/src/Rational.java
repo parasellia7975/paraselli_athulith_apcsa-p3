@@ -6,8 +6,11 @@ import static java.lang.System.*;
 
 class Rational implements Comparable<Rational>
 {
+	private int num;
+	private in den;
 	//add two instance variables
 
+	
 	//write two constructors
 
 
