@@ -19,18 +19,53 @@ public class ToyStore
 
 	public void loadToys( String toys )
 	{
-		Toy test = new Toy(toys);
+		boolean done = false;
+		String part = "";
+		String temp = toys;
+		boolean exists = false;
+		
+		int cut;
+		while(!done) {
+			
+		cut = temp.indexOf(" ");
+		part = temp.substring(0,cut);
+		temp = temp.substring(cut+1,temp.length());
+		Toy test = new Toy(part);
+		for(int i = 0; i<toyList.size(); i++) {
+			if(toyList.get(i).getName().equals(part)) {
+				toyList.get(i).setCount(toyList.get(i).getCount()+1);
+				exists = true;
+			}
+			}
+		if(!exists) {
 		toyList.add(test);
+		test.setCount(1);
+		}
+		if(temp.indexOf(" ") == -1)
+			done = true;
+		exists = false;
+		}
+		
 	}
   
   	public Toy getThatToy( String nm )
   	{
+  		for(int i = 0; i<toyList.size(); i++) {
+  			if(toyList.get(i).getName().equals(nm)) {
+  				return toyList.get(i);
+  			}
+  		}
   		return null;
   	}
   
   	public String getMostFrequentToy()
   	{
-  		return "";
+  		Toy max = toyList.get(0);
+  		for(int i = 0; i<toyList.size(); i++) {
+  			if(toyList.get(i).getCount()>max.getCount())
+  				max = toyList.get(i);
+  		}
+  		return max.getName() + " Is the most frequent toy";
   	}  
   
   	public void sortToysByCount()
@@ -39,6 +74,10 @@ public class ToyStore
   	  
 	public String toString()
 	{
-	   return "";
+		String output = "";
+		for(int i = 0; i<toyList.size(); i++) {
+			output = output + " " + toyList.get(i).getName() + toyList.get(i).getCount() + ", ";
+		}
+	   return output;
 	}
 }
