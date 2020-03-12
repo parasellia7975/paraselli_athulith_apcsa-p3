@@ -98,6 +98,7 @@ class Rational implements Comparable<Rational>
 	
 	public boolean equals( Object obj)
 	{
+		
 		this.reduce();
 		if(obj == this)
 			return true;
