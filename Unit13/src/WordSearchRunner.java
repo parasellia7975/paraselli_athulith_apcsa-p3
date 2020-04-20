@@ -23,5 +23,6 @@ public class WordSearchRunner
     	  	     System.out.println( s + " was not found in the matrix.");
     	  	  }
     	  }
+    	 
     }
 }
