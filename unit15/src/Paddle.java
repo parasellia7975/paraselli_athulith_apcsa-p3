@@ -12,7 +12,7 @@ public class Paddle extends Block
 
    public Paddle()
    {
-		super(10,10);
+	  super(10,10);
       speed =5;
    }
 
@@ -21,7 +21,7 @@ public class Paddle extends Block
 
    public Paddle(int x, int y)
    {
-		super(x,y);
+	  super(x,y);
       speed =5;
    }
 
@@ -30,14 +30,21 @@ public class Paddle extends Block
 		super(x,y);
       speed =mySpeed;
    }
+   public Paddle(int x, int y, int w, int h, int mySpeed) {
+	   super(x,y,w,h);
+	   speed = mySpeed;
+   }
+  
 
 
 
+public Paddle(int x, int y, int w, int h, Color green, int mySpeed) {
+	 super(x,y,w,h,green);
+	   speed = mySpeed;
+}
 
 
-
-
-   public void moveUpAndDraw(Graphics window)
+public void moveUpAndDraw(Graphics window)
    {
 
 
@@ -52,6 +59,25 @@ public class Paddle extends Block
    //add get methods
    public int getSpeed() {
 	   return speed;
+   }
+   public int getX() {
+	   return super.getX();
+   }
+   public int getY() {
+	   return super.getY();
+   }
+   public int getW() {
+	   return super.getWidth();
+   }
+   public int getH() {
+	   return super.getHeight();
+   }
+   public Color getColor() {
+	   return super.getCol();
+   }
+   public String toString() {
+	   String output = "" + getX() + " " + getY() + " " + getW() + " " + getH() + " " + getColor() + " " + speed;
+	   return output;
    }
    
    //add a toString() method
