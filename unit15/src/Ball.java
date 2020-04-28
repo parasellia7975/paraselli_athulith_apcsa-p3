@@ -67,14 +67,14 @@ public class Ball extends Block
    public void moveAndDraw(Graphics window)
    {
    	//draw a white ball at old ball location
+	   
 	   draw(window,Color.white);
-
       setX(getX()+xSpeed);
       setY(getY()+ySpeed);
 		//setY
-
+      
 		//draw the ball at its new location
-      draw(window);
+      draw(window, super.getCol());
    }
    
 	public boolean equals(Object obj)

@@ -46,13 +46,17 @@ public Paddle(int x, int y, int w, int h, Color green, int mySpeed) {
 
 public void moveUpAndDraw(Graphics window)
    {
-
+		draw(window,Color.white);
+		setY(getY()-getSpeed());
+		draw(window, super.getCol());
 
    }
 
    public void moveDownAndDraw(Graphics window)
    {
-
+	   draw(window,Color.white);
+	   setY(getY()+getSpeed());
+	   draw(window, super.getCol());
 
    }
 
