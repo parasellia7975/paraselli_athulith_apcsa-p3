@@ -134,6 +134,33 @@ public class Picture extends SimplePicture
       }
     }
   }
+  
+  public void negate() {
+	  Pixel[][] pixels = this.getPixels2D();
+	    for (Pixel[] rowArray : pixels)
+	    {
+	      for (Pixel pixelObj : rowArray)
+	      {
+	        pixelObj.updatePicture(pixelObj.getAlpha(),(255 - pixelObj.getRed()), 255 - pixelObj.getGreen(), 255 - pixelObj.getBlue());
+	      }
+	    } 
+  }
+  
+  public void Grayscale(){
+	  Pixel[][] pixels = this.getPixels2D();
+	  int avrg;
+	    for (Pixel[] rowArray : pixels)
+	    {
+	      for (Pixel pixelObj : rowArray)
+	      {
+	    	  avrg = pixelObj.getRed() + pixelObj.getGreen() + pixelObj.getBlue();
+	    	  avrg = avrg/3;
+	        pixelObj.updatePicture(pixelObj.getAlpha(),avrg, avrg, avrg);
+	      }
+	    } 
+  }
+  
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
@@ -176,6 +203,45 @@ public class Picture extends SimplePicture
         rightPixel.setColor(leftPixel.getColor());
       }
     }
+  }
+  
+  public void mirrorDiagonal() // mirrors from top right to bottom left
+  {
+      Pixel[][] pixels = this.getPixels2D();
+      Pixel topRightPixel = null;
+      Pixel bottomLeftPixel = null;
+      int maxLength;
+      if (pixels.length < pixels[0].length) { maxLength = pixels.length; }
+      else {maxLength = pixels[0].length; }
+      
+      for (int row = 0; row < maxLength; row++)
+      {
+          for (int col = row; col < maxLength; col++)
+          {
+              topRightPixel = pixels[row][col];
+              bottomLeftPixel = pixels[col][row];
+              bottomLeftPixel.setColor(topRightPixel.getColor());
+          }
+      }
+  }
+  
+
+  
+  public void mirrorHorizontal()
+  {
+      Pixel[][] pixels = this.getPixels2D();
+      Pixel topPixel = null;
+      Pixel bottomPixel = null;
+      int height = pixels.length;
+      for (int row = 0; row < height; row++)
+      {
+          for (int col = 0; col < pixels[0].length; col++)
+          {
+              topPixel = pixels[row][col];
+              bottomPixel = pixels[height - 1 - row][col];
+              bottomPixel.setColor(topPixel.getColor());
+          }
+      }
   }
   
   /** copy from the passed fromPic to the
